@@ -1,0 +1,10 @@
+Nr.  Usuário        Espaço utilizado     % do uso
+1  alexandre  434.99 MB 16.849823944343946 %
+2  anderson  1187.99 MB 46.018120755974074 %
+3  antonio  117.74 MB 4.560790526694995 %
+4  carlos  87.03 MB 3.3712043446429885 %
+5  cesar  0.94 MB 0.036411950867107995 %
+6  rosemary  752.88 MB 29.163648477476883 %
+
+Espaço total ocupado: 2581.57MB
+Espaço médio ocupado: 430.2616666666667 MB

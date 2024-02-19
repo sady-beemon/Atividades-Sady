@@ -6,19 +6,19 @@ Telefone possui 7 dígitos. Vou acrescentar o digito três na frente.
 Telefone corrigido sem formatação: 34610133
 Telefone corrigido com formatação: 3461-0133"""
 
-tel = (input("Digite um numero de telefone: "))
-newtel = []
 
-if len(tel) > 9:
-    print("Numero de telefone precisa ter 8 digitos: ")
-    for i in range(8):
+form = []
+tel = str(input("Digite um numero de telefone: "))
+if len(tel) != 9:
+    print("Telefone possui 7 dígitos. Vou acrescentar o digito três na frente: ")
+    tel = f'3{tel}'
+print("Telefone corrigido sem formatação: ",tel)
+    
+for i in range(len(tel)):
+    form.append(tel[i])
+    if tel[4] != '-':
+        if i == 3:
+            form.append('-')
+    newtel =''.join(form)
 
-        if tel[i] ==any('0','1','2','3','4','5','6','7','8','9') or tel[4] == '-':
-            newtel.append(tel[i])
-        else:
-            print("Numero em posiçao ",i+1," invalido substituido por: ",i)
-            tel[i] == i
-    if tel[4:] != '-':
-        newtel[4] = '-'
-
-print(newtel)
+print("Telefone corrigido com formatação: ",newtel)
