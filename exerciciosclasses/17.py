@@ -2,10 +2,11 @@
 Imite o funcionamento do programa básico, mas ao invés de exigis que o usuário tome conta de um único bichinho, exija que ele tome conta da fazenda inteira.
  Cada opção do menu deveria permitir que o usuário executasse uma ação para todos os bichinhos (alimentar todos os bichinhos, brincar com todos os bichinhos,
    ou ouvir a todos os bichinhos). Para tornar o programa mais interessante, dê para cada bichinho um nivel inicial aleatório de fome e tédio."""
+
 bichinhos = []
 import random
 
-class bichinho:
+class Bichinho:
     def __init__(atributos,nome ,idade, fome, sd, brinc):
         atributos.sd = sd
         atributos.fm = fome
@@ -33,13 +34,13 @@ class bichinho:
     def escolha():
         mtd = int(input("Selecione um metodo desejado para adicionar(ou subtrarir) para todos os bichinhos:\n1 - Envelhecer\n2 - Alimentar\n3 - Cuidar (aumentar saude) \n4 - Brincar:\n5 - Nao fazer Nada "))
         if mtd == 1:
-            bichinho.envelhecer_todos()
+            Bichinho.envelhecer_todos()
         elif mtd == 2:
-            bichinho.alimentar_todos()
+            Bichinho.alimentar_todos()
         elif mtd == 3:
-            bichinho.cuidar_todos()
+            Bichinho.cuidar_todos()
         elif mtd == 4:
-            bichinho.brincar_todos()
+            Bichinho.brincar_todos()
         else: 
             print("Nada acontece.")
 
@@ -66,7 +67,7 @@ class bichinho:
         
 def add():
     nome = str(input("Digite o nome do bichinho:\nOs outros itens serao preenchidos aleatoriamente\n"))
-    p1 = bichinho(nome,idade = random.randint(1,25), fome = random.randint(30,80), sd = random.randint(35,85) ,brinc = random.randint(15,85))
+    p1 = Bichinho(nome,idade = random.randint(1,25), fome = random.randint(30,80), sd = random.randint(35,85) ,brinc = random.randint(15,85))
     return p1
 
 def fazenda():
@@ -79,12 +80,12 @@ def fazenda():
         if i == 0:
             False
         else:
-            bichinho.visualizar(bichinhos[i-1])
+            Bichinho.visualizar(bichinhos[i-1])
     elif menu == 2:
         p1 = add()
         bichinhos.append(p1)
     elif menu == 3:
-        bichinho.escolha()
+        Bichinho.escolha()
     elif menu == 4:
         cont = input("Deseja continuar?\n'sim'  'nao' : ")
         if cont == 'sim':

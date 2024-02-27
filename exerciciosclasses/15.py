@@ -20,7 +20,7 @@ class bichinho:
             print("O bichino atualmente esta muito mal humorado.")
         elif humor == 2:
             print("O bichino atualmente esta emburrado.")
-        elif humor == 3:
+        elif humor == 3: 
             print("O bichino atualmente esta bem humorado.")
         mtd = int(input("Selecione um metodo desejado para alterar:\n1 - Idade\n2 - Fome\n3 - Saude \n4 - Nome\n5 - Brincar "))
         if mtd == 1:

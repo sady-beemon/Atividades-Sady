@@ -23,7 +23,7 @@ class conta:
 
 saldo = float(input("Digite o saldo atual da conta: "))
 taxa = float(input("Digite o juro inicial da conta: "))
-cnt = conta(taxa,saldo)
+cnt = conta(saldo,taxa)
 
 while True:
     conta.metodos(cnt)

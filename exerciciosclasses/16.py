@@ -29,7 +29,7 @@ class bichinho:
 
 
     def escolha(atributos):
-        mtd = int(input("Selecione um metodo desejado para adicionar(ou subtrarir) para todos os bichinhos:\n1 - Envelhecer\n2 - Alimentar\n3 - Cuidar (aumentar saude) \n4 - Brincar:\n5 - Nao fazer Nada "))
+        mtd = int(input("Selecione um metodo desejado para adicionar(ou subtrarir) para o bichinhos:\n1 - Envelhecer\n2 - Alimentar\n3 - Cuidar (aumentar saude) \n4 - Brincar:\n5 - Nao fazer Nada "))
         if mtd == 1:
             bichinho.envelhecer_todos(atributos)
         elif mtd == 2:
@@ -38,25 +38,25 @@ class bichinho:
             bichinho.cuidar_todos(atributos)
         elif mtd == 4:
             bichinho.brincar_todos(atributos)
-        elif mtd == 5:
+        elif mtd == 6:
             bichinho.visualizar(atributos) 
         else:    
             print("Nada acontece.")
 
     def envelhecer_todos(atributos):
-        qnt = int(input("Digite a quantidade de anos que cada bichinho envelheceu: "))
+        qnt = int(input("Digite a quantidade de anos que o bichinho envelheceu: "))
         atributos.id += qnt
 
     def alimentar_todos(atributos):
-        qnt = int(input("Digite a quantidade de alimento quer dar a cada bichinho: "))
+        qnt = int(input("Digite a quantidade de alimento quer dar ao bichinho: "))
         atributos.fm += qnt
 
     def brincar_todos(atributos):
-        qnt = int(input("Digite o tempo que quer brincar com cada bichinho: "))
+        qnt = int(input("Digite o tempo que quer brincar com o bichinho: "))
         atributos.br += qnt
 
     def cuidar_todos(atributos):
-        qnt = int(input("Digite a quantidade de cuidado dedicado a cada bichinho: "))
+        qnt = int(input("Digite a quantidade de cuidado dedicado ao bichinho: "))
         atributos.sd += qnt
 
 nome = str(input("Digite o nome do bichinho: "))
