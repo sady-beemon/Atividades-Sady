@@ -2,23 +2,35 @@
 
 class conta:
     def __init__(atributos, saldo, taxa):
-        atributos.sa = saldo
-        atributos.tx = taxa
-    def metodos(atributos):
-        choic = int(input("Selecione a opcao desejada:\n1 - Modificar Saldo\n2 - Mudar valor de juros \n3 - Adcione juros\n"))
-        if choic == 1:
-            qnt = int(input("Digite o valor do novo saldo: "))
-            atributos.sa = qnt
-        elif choic == 2:
-            qnt = int(input("Digite a quantidade: "))
-            atributos.tx = qnt
+        atributos.saldo = saldo
+        atributos.juro = taxa
+
+    def escolha_metodo(atributos):
+        choic = int(input("Selecione a opcao desejada:\n1 - Modificar Saldo\n2 - Mudar valor de juros \n3 - Adcione juros\n4 - Mostrar informaçoes da conta\n"))
+        if choic == 4:
+            conta.mostrar_conta(atributos)
         elif choic == 3:
-            print(atributos.sa)
-            atributos.sa = atributos.sa + (atributos.sa * (atributos.tx/100))
-            
+            conta.adcionar_juros(atributos)
+        elif choic == 2:
+            conta.modificar_valor_juros(atributos)
+        elif choic == 1:
+            conta.modificar_saldo(atributos)
         else:
             print('A conta foi inalterada')
-        print(f"A conta tem um saldo atual de: R$ {atributos.sa}.  com {atributos.tx/100}% de juros atuais")
+
+    def mostrar_conta(atributos):
+        print(f"A conta tem um saldo atual de: R$ {atributos.saldo}.  com {atributos.juro}% de juros atuais")
+
+    def modificar_valor_juros(atributos):
+            qnt = int(input("Digite o novo valor dos juros: "))
+            atributos.juro = qnt
+
+    def adcionar_juros(atributos):
+            atributos.saldo = atributos.saldo + (atributos.saldo * (atributos.juro/100))
+
+    def modificar_saldo(atributos):
+            qnt = int(input("Digite o valor do novo saldo: "))
+            atributos.saldo = qnt
 
 
 saldo = float(input("Digite o saldo atual da conta: "))
@@ -26,7 +38,7 @@ taxa = float(input("Digite o juro inicial da conta: "))
 cnt = conta(saldo,taxa)
 
 while True:
-    conta.metodos(cnt)
+    conta.escolha_metodo(cnt)
     cont = input("Deseja continuar?\n'sim'  'nao' : ")
     if cont == 'nao':
         break
